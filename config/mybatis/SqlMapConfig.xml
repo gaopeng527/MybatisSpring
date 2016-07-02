@@ -23,8 +23,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		1.需要将mapper接口类名与mapper.xml映射文件名称保持一致
 		2.mapper接口类与mapper.xml映射文件需要在一个目录中
 		3.使用的是mapper代理方法
+		（和spring整合后，如果在applicationContext.xml中指定mapper为批量扫描，该项就不再需要）
 		 -->
-		 <package name="gao.ssm.mapper"/>
+		 <!-- <package name="gao.ssm.mapper"/> -->
 	</mappers>
 	
 </configuration>
