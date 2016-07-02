@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<!-- 自定义别名 -->
+	<typeAliases>
+		<!-- 批量别名定义，指定包名，mybatis自动扫描包中的po类，自动定义别名，别名就是类名（首字母大写小写都可以） -->
+		<package name="gao.ssm.po"/>
+	</typeAliases>
+	
+	<!-- 类型处理器，实现java类型与jdbc类型的转换 -->
+	<!-- <typeHandlers></typeHandlers> -->
+	
+	<!-- 加载 映射文件 -->
+	<mappers>
+		<!-- 通过resource方法一次加载一个配置文件 -->
+		<mapper resource="sqlmap/User.xml"/>
+		
+		<!-- 批量加载mapper，指定mapper接口包名，mybatis自动扫描所有接口进行加载（推荐使用）
+		需要遵循一些规范：
+		1.需要将mapper接口类名与mapper.xml映射文件名称保持一致
+		2.mapper接口类与mapper.xml映射文件需要在一个目录中
+		3.使用的是mapper代理方法
+		 -->
+		 <package name="gao.ssm.mapper"/>
+	</mappers>
+	
+</configuration>
